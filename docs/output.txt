@@ -1,0 +1,105 @@
+Perform knn on movielens dataset (small):
+Logs:
+
+20180423085307.513;7f366f067700;model_based_reccomendation.py;do_knn_on_movie_lens;I;0; Starting KNN model based recommendation engine
+20180423085307.513;7f366f067700;model_based_reccomendation.py;do_knn_on_movie_lens;I;0;Since the user requested new recommendations hence resubmitting the job
+20180423085308.294;7f366f067700;model_based_reccomendation.py;load_data;I;0;Successfully imported movie lens data in '0.0130230824153' minutes
+20180423085840.027;7f366f067700;model_based_reccomendation.py;do_knn;I;0;Data prediction completed in '5.54190555016' minutes
+20180423085844.032;7f366f067700;model_based_reccomendation.py;get_top_recommendations;I;0;Generated top recommendations and loaded into dataframe in '5.60864355167' minutes
+20180423085844.078;7f366f067700;model_based_reccomendation.py;read_item_names;I;0;Movie Item names imported in '5.60942070087' minutes
+20180423085844.163;7f366f067700;model_based_reccomendation.py;do_knn_on_movie_lens;I;0;All recommendations generated are written to '/home/khanna/codebase/recommendation-engine/python/models/../records/../records/knn_based_recommendation.txt' in '5.61083594958' minutes
+20180423085844.163;7f366f067700;model_based_reccomendation.py;get_user_rating;I;0;Fetching the records for user '1'
+20180423085844.322;7f366f067700;model_based_reccomendation.py;get_user_rating;I;0;Records successfully fetched for user '1' in '5.61348256667' minutes
+
+
+RMSE:
+Rmse values for doing model based recomm on movielens data is 0.4893037847705541
+
+#######################################################################################################################################################################
+Perform SVD on movielens dataset (small):
+Logs:
+
+20180423090049.249;7f366f067700;svd_on_movie_lens.py;do_svd_on_movie_lens;I;0; Starting SVD based recommendation engine
+20180423090049.250;7f366f067700;svd_on_movie_lens.py;do_svd_on_movie_lens;I;0;Since the user requested new recommendations hence resubmitting the job
+20180423090049.966;7f366f067700;svd_on_movie_lens.py;load_data;I;0;Successfully imported movie lens data in '0.0119508345922' minutes
+20180423090121.692;7f366f067700;svd_on_movie_lens.py;do_svd;I;0;Data prediction completed in '0.540707035859' minutes
+20180423090125.740;7f366f067700;svd_on_movie_lens.py;get_top_recommendations;I;0;Generated top recommendations and loaded into dataframe in '0.608178035418' minutes
+20180423090125.747;7f366f067700;svd_on_movie_lens.py;read_item_names;I;0;Movie Item names imported in '0.60830026865' minutes
+20180423090125.805;7f366f067700;svd_on_movie_lens.py;do_svd_on_movie_lens;I;0;All recommendations generated are written to '/home/khanna/codebase/recommendation-engine/python/models/../records/../records/svd_movielens_recommendation.txt' in '0.60925753514' minutes
+20180423090125.805;7f366f067700;svd_on_movie_lens.py;get_user_rating;I;0;Fetching the records for user '1'
+20180423090125.889;7f366f067700;svd_on_movie_lens.py;get_user_rating;I;0;Records successfully fetched for user '1' in '0.610656885306' minutes
+
+RMSE:
+Rmse values for doing svd based recomm on movielens data is 0.6050537100118739
+
+
+########################################################################################################################################################################
+Perfrom ALS using SPARK on movielens dataset(small)
+LOGS:
+
+20180423090556.611;7f5736e99700;als_spark.py;load_data;I;0;Successfully imported movie lens data in '6.35782877604e-07' minutes
+20180423090604.698;7f5736e99700;als_spark.py;transform_data;I;0;Data ready for prediction in '0.134780100981' minutes
+20180423090604.698;7f5736e99700;als_spark.py;do_cross_validation;I;0;Data splitted into test-train in '0.134789216518' minutes
+20180423090631.740;7f5736e99700;als_spark.py;do_als;I;0;Predictions completed in '0.585487218698' minutes
+
+
+Application output:
+[rdd_217_0]
+18/04/23 09:06:13 WARN Executor: 1 block locks were not released by TID = 64:
+[rdd_218_0]
+18/04/23 09:06:13 WARN Executor: 1 block locks were not released by TID = 65:
+[rdd_217_0]
+18/04/23 09:06:13 WARN Executor: 1 block locks were not released by TID = 66:
+[rdd_218_0]
+18/04/23 09:06:13 WARN Executor: 1 block locks were not released by TID = 67:
+[rdd_3_0]
+For rank 4 the RMSE is 0.947397387831                                           
+18/04/23 09:06:17 WARN Executor: 1 block locks were not released by TID = 82:
+[rdd_3_0]
+18/04/23 09:06:21 WARN Executor: 1 block locks were not released by TID = 143:  
+[rdd_449_0]
+18/04/23 09:06:21 WARN Executor: 1 block locks were not released by TID = 144:
+[rdd_450_0]
+18/04/23 09:06:21 WARN Executor: 1 block locks were not released by TID = 145:
+[rdd_449_0]
+18/04/23 09:06:21 WARN Executor: 1 block locks were not released by TID = 146:
+[rdd_450_0]
+For rank 8 the RMSE is 0.957024708311                                           
+18/04/23 09:06:25 WARN Executor: 1 block locks were not released by TID = 162:
+[rdd_3_0]
+18/04/23 09:06:28 WARN Executor: 1 block locks were not released by TID = 223:  
+[rdd_681_0]
+18/04/23 09:06:28 WARN Executor: 1 block locks were not released by TID = 224:
+[rdd_682_0]
+18/04/23 09:06:28 WARN Executor: 1 block locks were not released by TID = 225:
+[rdd_681_0]
+18/04/23 09:06:28 WARN Executor: 1 block locks were not released by TID = 226:
+[rdd_682_0]
+18/04/23 09:06:28 WARN Executor: 1 block locks were not released by TID = 227:
+[rdd_3_0]
+For rank 12 the RMSE is 0.954850413563                                          
+The best model was trained with rank 4
+[((452, 1084), 3.1502539621683985), ((472, 1084), 3.912258081109531), ((529, 1084), 3.8555683869514152), ((605, 1084), 2.8234720170341068), ((547, 1084), 3.7294157984825467)]
+
+###############################################################################################################################################################################
+
+Perfrom SVD on trasaction data
+LOGS:
+
+
+20180423091040.039;7f5736e99700;svd_on_transaction_data.py;generate_ratings;I;0; Starting SVD based recommendation engine
+20180423091040.039;7f5736e99700;svd_on_transaction_data.py;generate_ratings;I;0;Since the user requested new recommendations hence resubmitting the job
+20180423091040.207;7f5736e99700;svd_on_transaction_data.py;get_data;I;0;Successfully imported data from '/home/khanna/codebase/recommendation-engine/python/models/../data/transaction_data.csv' in '0.00279709895452' minutes
+20180423091040.211;7f5736e99700;svd_on_transaction_data.py;do_predictions;I;0;Data normalised in '0.00286293029785' minutes
+20180423091040.593;7f5736e99700;svd_on_transaction_data.py;do_predictions;I;0;Data successfully decomposed into 3 singular matrix in with 80 iterations in '0.00923023223877' minutes
+20180423091040.644;7f5736e99700;svd_on_transaction_data.py;do_predictions;I;0;Data prediction completed and loaded into dataframe in '0.0100844502449' minutes
+20180423091339.367;7f5736e99700;svd_on_transaction_data.py;generate_ratings;I;0;All recommendations generated are written to '/home/khanna/codebase/recommendation-engine/python/models/../records/svd_based_recommendation.txt' in '2.98880636692' minutes
+20180423091339.368;7f5736e99700;svd_on_transaction_data.py;get_user_rating;I;0;Fetching the records for user '1'
+20180423091339.616;7f5736e99700;svd_on_transaction_data.py;get_user_rating;I;0;Records successfully fetched for user '1' in '2.99294250011' minutes
+
+
+RMSE:
+Rmse values for doing svd on transaction data is 0.014703872830133597
+
+
+
